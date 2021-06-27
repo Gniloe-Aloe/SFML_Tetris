@@ -1,4 +1,4 @@
-#include <SFML/Graphics.hpp>
+п»ї#include <SFML/Graphics.hpp>
 #include <ctime>
 #include <vector>
 #include <string>
@@ -28,14 +28,14 @@ public:
 	
 	
 	void set_field(const sf::Texture& block_texture) {
-		//тут специально перепутаны столбцы и строки для того, чтобы к координатам массива можно было обращаться
-		//в таком же порядке, как это происходит в библиотеке SFML: сначала обращение к абсциссу, а потом к ординату.
-		//в двумерном динамическом массиве происходит наоборот.
+		//С‚СѓС‚ СЃРїРµС†РёР°Р»СЊРЅРѕ РїРµСЂРµРїСѓС‚Р°РЅС‹ СЃС‚РѕР»Р±С†С‹ Рё СЃС‚СЂРѕРєРё РґР»СЏ С‚РѕРіРѕ, С‡С‚РѕР±С‹ Рє РєРѕРѕСЂРґРёРЅР°С‚Р°Рј РјР°СЃСЃРёРІР° РјРѕР¶РЅРѕ Р±С‹Р»Рѕ РѕР±СЂР°С‰Р°С‚СЊСЃСЏ
+		//РІ С‚Р°РєРѕРј Р¶Рµ РїРѕСЂСЏРґРєРµ, РєР°Рє СЌС‚Рѕ РїСЂРѕРёСЃС…РѕРґРёС‚ РІ Р±РёР±Р»РёРѕС‚РµРєРµ SFML: СЃРЅР°С‡Р°Р»Р° РѕР±СЂР°С‰РµРЅРёРµ Рє Р°Р±СЃС†РёСЃСЃСѓ, Р° РїРѕС‚РѕРј Рє РѕСЂРґРёРЅР°С‚Сѓ.
+		//РІ РґРІСѓРјРµСЂРЅРѕРј РґРёРЅР°РјРёС‡РµСЃРєРѕРј РјР°СЃСЃРёРІРµ РїСЂРѕРёСЃС…РѕРґРёС‚ РЅР°РѕР±РѕСЂРѕС‚.
 		field = new Block* [FIELD_WIDTH];
 		for (int w = 0; w < FIELD_WIDTH; ++w) {
 			field[w] = new Block[FIELD_HEIGHT];
 		}
-		//задаём первоначальные параметры для блоков
+		//Р·Р°РґР°С‘Рј РїРµСЂРІРѕРЅР°С‡Р°Р»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РґР»СЏ Р±Р»РѕРєРѕРІ
 		for (int w = 0; w < FIELD_WIDTH; ++w) {
 			for (int h = 0; h < FIELD_HEIGHT; ++h) {	
 				field[w][h].block_sprite.setTexture(block_texture);
@@ -83,7 +83,7 @@ int main() {
 	
 	//
 	sf::Texture block_texture;
-	block_texture.loadFromFile("C:\\Users\\Gniloe_Aloe\\Desktop\\Tetris\\pic\\block5.png");
+	block_texture.loadFromFile("C:\\Users\\Gniloe_Aloe\\Desktop\\SFML_Tetris\\pic\\block5.png");
 	//
 	game.set_window();
 	game.set_field(block_texture);
